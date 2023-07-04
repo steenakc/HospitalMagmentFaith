@@ -19,6 +19,7 @@ public class Appointment {
 	
 	private String opToken;
 	
+	
 	private boolean isActive;
 	
 	private LocalTime attendedTime;
