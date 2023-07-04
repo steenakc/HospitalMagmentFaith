@@ -8,7 +8,7 @@ public class CsmProjectApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CsmProjectApplication.class, args);
-		System.out.println("CMS ");
+		System.out.println("WELCOME CMS  ");
 	}
 
 }
