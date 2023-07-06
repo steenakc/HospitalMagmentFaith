@@ -28,6 +28,10 @@ public class User {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+
+	
+
 
 	public Integer getUserId() {
 		return userId;
