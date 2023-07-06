@@ -23,16 +23,23 @@ public class TestPrescription {
 	
 	private boolean labStatus;
 	
+	private Integer appointmentId;
 	@ManyToOne
 	@JoinColumn(name="appointmentId",insertable = false,updatable = false)
 	private Appointment appointment;
+	
+	private Integer labTestId;
 	@ManyToOne
 	@JoinColumn(name="labTestId",insertable = false,updatable = false)
 	private LabTest labTest;
+	
+	
 	public TestPrescription() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	
 	public Integer getTestPrescriptionId() {
 		return testPrescriptionId;
 	}
@@ -74,6 +81,14 @@ public class TestPrescription {
 	}
 	public void setLabTest(LabTest labTest) {
 		this.labTest = labTest;
+	}
+
+	
+	public String toString() {
+		return "TestPrescription [testPrescriptionId=" + testPrescriptionId + ", testPrescriptionDate="
+				+ testPrescriptionDate + ", reportCreateDate=" + reportCreateDate + ", actualValue=" + actualValue
+				+ ", labStatus=" + labStatus + ", appointmentId=" + appointmentId + ", appointment=" + appointment
+				+ ", labTestId=" + labTestId + ", labTest=" + labTest + "]";
 	}
 	
 	

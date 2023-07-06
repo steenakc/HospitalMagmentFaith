@@ -18,15 +18,18 @@ public class Staff {
 	 
 	private boolean isActive;
 	
+	private Integer userId;
 	@OneToOne
 	@JoinColumn(name="userId",insertable = false,updatable = false)
 	private User user;
 
+	
 	public Staff() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
+	
 	public Integer getStaffId() {
 		return staffId;
 	}
@@ -66,6 +69,17 @@ public class Staff {
 	public void setUser(User user) {
 		this.user = user;
 	}
+
+
+	public Integer getUserId() {
+		return userId;
+	}
+
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
+
 	
 	
 

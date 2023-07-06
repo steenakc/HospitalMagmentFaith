@@ -62,6 +62,12 @@ public class MedicineCompany {
 	public void setActive(boolean isActive) {
 		this.isActive = isActive;
 	}
+
+	
+	public String toString() {
+		return "MedicineCompany [medicneCompanyId=" + medicneCompanyId + ", companyName=" + companyName
+				+ ", companyAddress=" + companyAddress + ", contactNo=" + contactNo + ", isActive=" + isActive + "]";
+	}
 	
 
 	

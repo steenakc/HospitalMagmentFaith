@@ -14,11 +14,13 @@ public class Department {
 	
 	private String deptName;
 
+	
 	public Department() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
+	
 	public Integer getDeptId() {
 		return deptId;
 	}
@@ -34,6 +36,11 @@ public class Department {
 	public void setDeptName(String deptName) {
 		this.deptName = deptName;
 		
+	}
+
+
+	public String toString() {
+		return "Department [deptId=" + deptId + ", deptName=" + deptName + "]";
 	}
 	
 	

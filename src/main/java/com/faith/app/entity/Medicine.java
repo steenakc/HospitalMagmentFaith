@@ -16,10 +16,13 @@ public class Medicine {
 	private String medicineName;
 	
 	private Double rate;
-	
+	                
+	private Integer medicneCompanyId;
 	@ManyToOne
 	@JoinColumn(name="medicneCompanyId",insertable = false,updatable = false)
 	private MedicineCompany medicineCompany;
+
+	private boolean isActive;
 
 	public Medicine() {
 		super();
@@ -57,8 +60,29 @@ public class Medicine {
 	public void setMedicineCompany(MedicineCompany medicineCompany) {
 		this.medicineCompany = medicineCompany;
 	}
-	
-	
-	
 
+	public Integer getMedicneCompanyId() {
+		return medicneCompanyId;
+	}
+
+	public void setMedicneCompanyId(Integer medicneCompanyId) {
+		this.medicneCompanyId = medicneCompanyId;
+	}
+
+	public boolean isActive() {
+		return isActive;
+	}
+
+	public void setActive(boolean isActive) {
+		this.isActive = isActive;
+	}
+
+	
+	public String toString() {
+		return "Medicine [medicineId=" + medicineId + ", medicineName=" + medicineName + ", rate=" + rate
+				+ ", medicneCompanyId=" + medicneCompanyId + ", medicineCompany=" + medicineCompany + ", isActive="
+				+ isActive + "]";
+	}
+		
+	
 }

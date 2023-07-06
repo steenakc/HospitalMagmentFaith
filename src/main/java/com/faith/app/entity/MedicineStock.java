@@ -16,7 +16,7 @@ public class MedicineStock {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer medicineStockId ;
 	
-	private LocalDate stockAddedDate;
+	private LocalDate stockAddedDate=LocalDate.now();;
 	
 	private  Integer purchasedCount;
 	
@@ -26,9 +26,13 @@ public class MedicineStock {
 	
 	private Integer unitPerBox;
 	
+	private Integer medicineId;
 	@ManyToOne
 	@JoinColumn(name="medicineId",insertable = false,updatable = false)
 	private Medicine medicine;
+	
+	private boolean isActive=true;
+	
 
 	public MedicineStock() {
 		super();
@@ -90,7 +94,30 @@ public class MedicineStock {
 	public void setMedicine(Medicine medicine) {
 		this.medicine = medicine;
 	}
+
+	public Integer getMedicineId() {
+		return medicineId;
+	}
+
+	public void setMedicineId(Integer medicineId) {
+		this.medicineId = medicineId;
+	}
+
+	public boolean isActive() {
+		return isActive;
+	}
+
+	public void setActive(boolean isActive) {
+		this.isActive = isActive;
+	}
+
 	
+	public String toString() {
+		return "MedicineStock [medicineStockId=" + medicineStockId + ", stockAddedDate=" + stockAddedDate
+				+ ", purchasedCount=" + purchasedCount + ", expiryDate=" + expiryDate + ", noOfBoxes=" + noOfBoxes
+				+ ", unitPerBox=" + unitPerBox + ", medicineId=" + medicineId + ", medicine=" + medicine + ", isActive="
+				+ isActive + "]";
+	}
 	
 
 }

@@ -10,6 +10,7 @@ import javax.persistence.ManyToOne;
 
 @Entity
 public class User {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer userId;
@@ -19,6 +20,7 @@ public class User {
 	
 	@Column(name = "password", nullable = false, length = 12)
 	private String password;
+	
 	
 	@ManyToOne
 	@JoinColumn(name="roleId",insertable = false,updatable = false)
@@ -60,9 +62,7 @@ public class User {
 	public void setRole(Role role) {
 		this.role = role;
 	}
-	
-	
-	
+
 	
 	
 	

@@ -26,11 +26,13 @@ public class LabTest {
 	 
 	private String testNo;
 
+	
 	public LabTest() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
+	
 	public Integer getLabTestId() {
 		return labTestId;
 	}
@@ -94,7 +96,14 @@ public class LabTest {
 	public void setTestNo(String testNo) {
 		this.testNo = testNo;
 	}
-	
-	
 
+
+	
+	public String toString() {
+		return "LabTest [labTestId=" + labTestId + ", unit=" + unit + ", highRange=" + highRange + ", lowRange="
+				+ lowRange + ", testName=" + testName + ", testPrice=" + testPrice + ", isActive=" + isActive
+				+ ", testNo=" + testNo + "]";
+	}
+	
+	
 }
