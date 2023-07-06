@@ -26,19 +26,23 @@ public class Appointment {
 	
 	private boolean doctorStatus;
 	
+	private Integer patientId;
 	@ManyToOne
 	@JoinColumn(name="patientId",insertable = false,updatable = false)
 	private Patient patient;
 	
+	private Integer doctorId;
 	@ManyToOne
 	@JoinColumn(name="doctorId",insertable = false,updatable = false)
 	private Doctor doctor;
 
+	
 	public Appointment() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
+	
 	public Integer getAppointmentId() {
 		return appointmentId;
 	}
@@ -102,8 +106,31 @@ public class Appointment {
 	public void setDoctor(Doctor doctor) {
 		this.doctor = doctor;
 	}
+
+	public Integer getPatientId() {
+		return patientId;
+	}
+
+	public void setPatientId(Integer patientId) {
+		this.patientId = patientId;
+	}
+
+	public Integer getDoctorId() {
+		return doctorId;
+	}
+
+	public void setDoctorId(Integer doctorId) {
+		this.doctorId = doctorId;
+	}
+
+
 	
-	
+	public String toString() {
+		return "Appointment [appointmentId=" + appointmentId + ", appointmentDateTime=" + appointmentDateTime
+				+ ", opToken=" + opToken + ", isActive=" + isActive + ", attendedTime=" + attendedTime
+				+ ", doctorStatus=" + doctorStatus + ", patientId=" + patientId + ", patient=" + patient + ", doctorId="
+				+ doctorId + ", doctor=" + doctor + "]";
+	}
 	
 
 	

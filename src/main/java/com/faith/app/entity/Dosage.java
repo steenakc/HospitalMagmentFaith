@@ -35,6 +35,11 @@ public class Dosage {
 	public void setDosageStatus(String dosageStatus) {
 		this.dosageStatus = dosageStatus;
 	}
+
+	
+	public String toString() {
+		return "Dosage [dosageId=" + dosageId + ", dosageStatus=" + dosageStatus + "]";
+	}
 	
 	
 

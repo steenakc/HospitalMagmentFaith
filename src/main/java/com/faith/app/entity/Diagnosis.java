@@ -16,15 +16,18 @@ public class Diagnosis {
 	
 	private String diagnosis;
 	
+	private Integer appointmentId;
 	@ManyToOne
 	@JoinColumn(name="appointmentId",insertable = false,updatable = false)
 	private Appointment appointment;
 
+	
 	public Diagnosis() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
+	
 	public Integer getDiagnosisId() {
 		return diagnosisId;
 	}
@@ -47,6 +50,21 @@ public class Diagnosis {
 
 	public void setAppointment(Appointment appointment) {
 		this.appointment = appointment;
+	}
+
+	public Integer getAppointmentId() {
+		return appointmentId;
+	}
+
+	public void setAppointmentId(Integer appointmentId) {
+		this.appointmentId = appointmentId;
+	}
+
+
+	
+	public String toString() {
+		return "Diagnosis [diagnosisId=" + diagnosisId + ", diagnosis=" + diagnosis + ", appointmentId=" + appointmentId
+				+ ", appointment=" + appointment + "]";
 	}
 	
 	

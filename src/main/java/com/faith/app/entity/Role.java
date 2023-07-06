@@ -18,17 +18,20 @@ public class Role {
 	@Column(name = "role", nullable = false, length = 60)
 	private String role;
 
+	
 	public Role() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
+	
 	public Role(Integer roleId, String role) {
 		super();
 		this.roleId = roleId;
 		this.role = role;
 	}
 
+	
 	public Integer getRoleId() {
 		return roleId;
 	}
@@ -45,12 +48,5 @@ public class Role {
 		this.role = role;
 	}
 
-	@Override
-	public String toString() {
-		return "Role [roleId=" + roleId + ", role=" + role + "]";
-	}
-
-	
-	
 
 }

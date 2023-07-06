@@ -24,20 +24,24 @@ public class Doctor {
 	
 	private Integer maxOpVisits;
 	
+	private Integer userId;
 	@OneToOne
 	@JoinColumn(name="userId",insertable = false,updatable = false)
 	private User user;
 	
+	private Integer deptId;
 	@ManyToOne
 	@JoinColumn(name="deptId",insertable = false,updatable = false)
 	private Department department;
 
+	
 	public Doctor() {
 		super();
 		
 		// TODO Auto-generated constructor stub
 	}
 
+	
 	public Integer getDoctorId() {
 		return doctorId;
 	}
@@ -101,12 +105,30 @@ public class Doctor {
 	public void setDepartment(Department department) {
 		this.department = department;
 	}
-	
-	
-	
+
+	public Integer getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
+
+	public Integer getDeptId() {
+		return deptId;
+	}
+
+	public void setDeptId(Integer deptId) {
+		this.deptId = deptId;
+	}
+
 
 	
-	
+	public String toString() {
+		return "Doctor [doctorId=" + doctorId + ", doctorName=" + doctorName + ", gender=" + gender + ", isActive="
+				+ isActive + ", consultationFee=" + consultationFee + ", maxOpVisits=" + maxOpVisits + ", userId="
+				+ userId + ", user=" + user + ", deptId=" + deptId + ", department=" + department + "]";
+	}
 	
 
 }

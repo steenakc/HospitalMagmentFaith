@@ -101,6 +101,13 @@ public class Patient {
 	public void setActive(boolean isActive) {
 		this.isActive = isActive;
 	}
+
+	
+	public String toString() {
+		return "Patient [patientId=" + patientId + ", patientRegNo=" + patientRegNo + ", patientName=" + patientName
+				+ ", age=" + age + ", adress=" + adress + ", gender=" + gender + ", phNo=" + phNo + ", bloodGroup="
+				+ bloodGroup + ", isActive=" + isActive + "]";
+	}
 	
 	
 
