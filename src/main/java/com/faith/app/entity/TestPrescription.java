@@ -40,6 +40,26 @@ public class TestPrescription {
 	}
 	
 	
+	public Integer getAppointmentId() {
+		return appointmentId;
+	}
+
+
+	public void setAppointmentId(Integer appointmentId) {
+		this.appointmentId = appointmentId;
+	}
+
+
+	public Integer getLabTestId() {
+		return labTestId;
+	}
+
+
+	public void setLabTestId(Integer labTestId) {
+		this.labTestId = labTestId;
+	}
+
+
 	public Integer getTestPrescriptionId() {
 		return testPrescriptionId;
 	}
