@@ -4,26 +4,27 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 @Entity
 public class Patient {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer patientId;
-	
+
 	private String patientRegNo;
-	
+
 	private String patientName;
-	
+
 	private Integer age;
 	private String adress;
-	
+
 	private String gender;
 	private String phNo;
 
 	private String bloodGroup;
 
-	private boolean isActive;
+	private boolean isActive = true;
 
 	public Patient() {
 		super();
@@ -102,15 +103,10 @@ public class Patient {
 		this.isActive = isActive;
 	}
 
-	
 	public String toString() {
 		return "Patient [patientId=" + patientId + ", patientRegNo=" + patientRegNo + ", patientName=" + patientName
 				+ ", age=" + age + ", adress=" + adress + ", gender=" + gender + ", phNo=" + phNo + ", bloodGroup="
 				+ bloodGroup + ", isActive=" + isActive + "]";
 	}
-	
-	
-
-	
 
 }

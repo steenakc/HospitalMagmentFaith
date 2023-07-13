@@ -20,11 +20,11 @@ public class Appointment {
 	private String opToken;
 	
 	
-	private boolean isActive;
+	private boolean isActive=true;
 	
 	private LocalTime attendedTime;
 	
-	private boolean doctorStatus;
+	private boolean doctorStatus=true;
 	
 	private Integer patientId;
 	@ManyToOne
