@@ -16,57 +16,90 @@ public class Diagnosis {
 	
 	private String diagnosis;
 	
+	private Integer patientId;
+	@ManyToOne
+	@JoinColumn(name="patientId",insertable = false,updatable = false)
+	private Patient patient;
+
 	private Integer appointmentId;
 	@ManyToOne
 	@JoinColumn(name="appointmentId",insertable = false,updatable = false)
 	private Appointment appointment;
-
 	
-	public Diagnosis() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	
-	public Integer getDiagnosisId() {
-		return diagnosisId;
-	}
-
-	public void setDiagnosisId(Integer diagnosisId) {
-		this.diagnosisId = diagnosisId;
-	}
-
-	public String getDiagnosis() {
-		return diagnosis;
-	}
-
-	public void setDiagnosis(String diagnosis) {
-		this.diagnosis = diagnosis;
-	}
-
-	public Appointment getAppointment() {
-		return appointment;
-	}
-
-	public void setAppointment(Appointment appointment) {
-		this.appointment = appointment;
-	}
-
 	public Integer getAppointmentId() {
 		return appointmentId;
 	}
+
 
 	public void setAppointmentId(Integer appointmentId) {
 		this.appointmentId = appointmentId;
 	}
 
 
-	
-	public String toString() {
-		return "Diagnosis [diagnosisId=" + diagnosisId + ", diagnosis=" + diagnosis + ", appointmentId=" + appointmentId
-				+ ", appointment=" + appointment + "]";
+	public Appointment getAppointment() {
+		return appointment;
 	}
+
+
+	public void setAppointment(Appointment appointment) {
+		this.appointment = appointment;
+	}
+
+
+	public Diagnosis() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public Integer getDiagnosisId() {
+		return diagnosisId;
+	}
+
+
+	public void setDiagnosisId(Integer diagnosisId) {
+		this.diagnosisId = diagnosisId;
+	}
+
+
+	public String getDiagnosis() {
+		return diagnosis;
+	}
+
+
+	public void setDiagnosis(String diagnosis) {
+		this.diagnosis = diagnosis;
+	}
+
+
+	public Integer getPatientId() {
+		return patientId;
+	}
+
+
+	public void setPatientId(Integer patientId) {
+		this.patientId = patientId;
+	}
+
+
+	public Patient getPatient() {
+		return patient;
+	}
+
+
+	public void setPatient(Patient patient) {
+		this.patient = patient;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Diagnosis [diagnosisId=" + diagnosisId + ", diagnosis=" + diagnosis + ", patientId=" + patientId
+				+ ", patient=" + patient + "]";
+	}
+
 	
+
 	
 
 }

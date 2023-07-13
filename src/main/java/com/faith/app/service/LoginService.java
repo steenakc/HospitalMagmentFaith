@@ -10,4 +10,6 @@ import com.faith.app.common.APIResponse;
 public interface LoginService {
 	public APIResponse findUserByNameAndPassword(Map<String, Object> loginMap);
 
+	public byte[] getUserImage(int userId);
+
 }

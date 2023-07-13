@@ -14,6 +14,17 @@ public class Dosage {
 	private Integer dosageId;
 	
 	private String dosageStatus;
+	
+	public Integer getDose() {
+		return dose;
+	}
+
+	public void setDose(Integer dose) {
+		this.dose = dose;
+	}
+
+
+	private Integer dose;
 
 	public Dosage() {
 		super();
