@@ -3,6 +3,7 @@ package com.faith.app.service;
 import java.util.List;
 
 import com.faith.app.entity.Medicine;
+import com.faith.app.entity.MedicineStock;
 
 
 public interface IMedicineService {
@@ -18,5 +19,9 @@ public interface IMedicineService {
 		
 		//Delete
 		public void deleteMedicine(int id);
+		
+		//List by medicineId
+		public Medicine medicineById(int medicineId);
+	
 
 }

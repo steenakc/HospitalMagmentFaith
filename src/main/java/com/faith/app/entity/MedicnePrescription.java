@@ -20,7 +20,7 @@ public class MedicnePrescription {
 	
 	private boolean pharmaStatus;
 	
-	private boolean isActive;
+	private boolean isActive=true;
 	
 	private Integer appointmentId;
 	@ManyToOne

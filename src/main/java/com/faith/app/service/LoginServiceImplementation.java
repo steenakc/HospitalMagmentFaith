@@ -32,6 +32,7 @@ public class LoginServiceImplementation implements LoginService {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+			
 			/*
 			 * username or password wrong
 			 */
@@ -78,6 +79,16 @@ public class LoginServiceImplementation implements LoginService {
 		}
 		return new APIResponse(false, "Something went wrong.");
 
+	}
+
+	@Override
+	public byte[] getUserImage(int userId) {
+		try {
+			return loginrepo.getUserImage(userId);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return null;
 	}
 
 }

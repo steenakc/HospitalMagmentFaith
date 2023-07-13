@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.faith.app.entity.Medicine;
 import com.faith.app.entity.MedicineCompany;
 import com.faith.app.service.IMedicinecompanyService;
 
@@ -33,6 +34,11 @@ public class MedicinecompanyController {
 	@GetMapping("/company")
 	public List<MedicineCompany> listAllCompany(){
 		return companyservice.listAllCompany();
+	}
+	
+	@GetMapping("/company/{medicneCompanyId}")		
+	public MedicineCompany getCompanyId(@PathVariable int medicneCompanyId) {		
+		return companyservice.companyById(medicneCompanyId);
 	}
 	
 	@PutMapping("/company")

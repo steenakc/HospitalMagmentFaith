@@ -36,6 +36,11 @@ public class MedicineController {
 		return medService.listAllMedicine();
 	}
 	
+	@GetMapping("/medicines/{medicineId}")		
+	public Medicine getMedicineId(@PathVariable int medicineId) {		
+		return medService.medicineById(medicineId);
+	}
+	
 	@PutMapping("/medicine")
 	public void updateMedicine(@RequestBody Medicine medicine) {
 		medService.updateMedicine(medicine);

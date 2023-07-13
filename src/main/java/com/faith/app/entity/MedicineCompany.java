@@ -16,7 +16,7 @@ public class MedicineCompany {
 
 	private String contactNo;
 	
-	private boolean isActive;
+	private boolean isActive=true;
 
 	public MedicineCompany() {
 		super();

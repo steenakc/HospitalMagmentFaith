@@ -18,4 +18,8 @@ public interface IMedicineprescriptionService {
 		
 		//Disable
 		public void disableMedicineprescription(int id);
+		
+		//List by id
+		public List<MedicnePrescription> getmedprescribe(int appointmentId);
+
 }

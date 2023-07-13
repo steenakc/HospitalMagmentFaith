@@ -2,6 +2,7 @@ package com.faith.app.service;
 
 import java.util.List;
 
+import com.faith.app.entity.Medicine;
 import com.faith.app.entity.MedicineCompany;
 
 public interface IMedicinecompanyService {
@@ -12,6 +13,9 @@ public interface IMedicinecompanyService {
 			//List
 			public List<MedicineCompany> listAllCompany();
 			
+			//List by medicinecompanyId
+			public MedicineCompany companyById(int medicneCompanyId);
+		
 			//Update
 			public void updateCompany(MedicineCompany company);
 			
