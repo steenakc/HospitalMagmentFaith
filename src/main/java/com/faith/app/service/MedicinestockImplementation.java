@@ -17,18 +17,21 @@ public class MedicinestockImplementation implements IMedicinestockService {
 	private IMedicinestock medstockrepo;
 	
 	//Add
+	@Transactional
 	public void addMedicinestock(MedicineStock medstock) {
 		
 		System.out.println("service");
 		
+	    medstockrepo.updatePurchasedCountById(medstock.getMedicineStockId());
 		medstockrepo.save(medstock);
+
 
 	}
 
 	//List
 	public List<MedicineStock> listAllMedStock() {
 		
-		return (List<MedicineStock>) medstockrepo.findAll();
+		return (List<MedicineStock>) medstockrepo.listbyActive();
 	}
 
 	//Update
@@ -42,6 +45,18 @@ public class MedicinestockImplementation implements IMedicinestockService {
 	public void deleteMedicinestock(int id) {
 		
 		medstockrepo.disablemedicinestock(id);
+	}
+
+	
+	public MedicineStock getmedicineId(int medicineId) {
+		
+		return  medstockrepo.getmedicineById(medicineId);
+	}
+
+	
+	public MedicineStock medicineStockById(int medicineStockId) {
+		
+		return medstockrepo.getmedicineStockId(medicineStockId);
 	}
 
 }

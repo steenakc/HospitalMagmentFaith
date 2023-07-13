@@ -40,4 +40,12 @@ public class MedicineprescriptionImplementation implements IMedicineprescription
 
 	}
 
+
+	
+	public List<MedicnePrescription> getmedprescribe(int appointmentId) {
+		return (List<MedicnePrescription>)medprescriberepo.getmedicinePrescribe(appointmentId);
+	}
+	
+	
+	
 }

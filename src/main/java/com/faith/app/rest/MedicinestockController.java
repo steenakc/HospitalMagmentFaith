@@ -34,6 +34,18 @@ public class MedicinestockController {
 		return medstockservice.listAllMedStock();
 	}
 	
+	@GetMapping("/stocks/{medicineId}")
+	public MedicineStock listStockById(@PathVariable int medicineId){
+		return medstockservice.getmedicineId(medicineId);
+	}
+	
+	@GetMapping("/stock/{medicineStockId}")
+	public MedicineStock listbyMedicinestock(@PathVariable int medicineStockId){
+		System.out.println("ljkhgf  ");
+		System.out.println("hhgghghg "+medicineStockId);
+		return medstockservice.medicineStockById(medicineStockId);
+	}
+	
 	@PutMapping("/stock")
 	public void updateStock(@RequestBody MedicineStock medstock) {
 		medstockservice.updateMedicinestock(medstock);

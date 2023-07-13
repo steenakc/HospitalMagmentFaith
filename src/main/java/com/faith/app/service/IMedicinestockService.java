@@ -3,6 +3,7 @@ package com.faith.app.service;
 import java.util.List;
 
 import com.faith.app.entity.MedicineStock;
+import com.faith.app.entity.MedicnePrescription;
 
 public interface IMedicinestockService {
 	
@@ -17,5 +18,10 @@ public interface IMedicinestockService {
 	
 	//Disable
 	public void deleteMedicinestock(int id);
+	
+	//List by id
+	public MedicineStock getmedicineId(int medicineId);
 
+	//List by medicineStockId
+	public MedicineStock medicineStockById(int medicineStockId);
 }

@@ -22,7 +22,7 @@ public class MedicinecompanyImplementation implements IMedicinecompanyService {
 	//List
 	public List<MedicineCompany> listAllCompany() {
 		
-		return (List<MedicineCompany>) companyrepo.findAll();
+		return (List<MedicineCompany>) companyrepo.listbyActive();
 	}
 
 	//Update
@@ -37,6 +37,11 @@ public class MedicinecompanyImplementation implements IMedicinecompanyService {
 	public void deleteCompany(int id) {
 			
 		companyrepo.disablecompany(id);
+	}
+
+	
+	public MedicineCompany companyById(int medicneCompanyId) {
+		return companyrepo.getmedicineCompanyById(medicneCompanyId);
 	}
 
 

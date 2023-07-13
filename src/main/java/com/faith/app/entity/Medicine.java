@@ -22,7 +22,7 @@ public class Medicine {
 	@JoinColumn(name="medicneCompanyId",insertable = false,updatable = false)
 	private MedicineCompany medicineCompany;
 
-	private boolean isActive;
+	private boolean isActive=true;
 
 	public Medicine() {
 		super();
