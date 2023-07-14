@@ -48,7 +48,7 @@ public class LoginServiceImplementation implements LoginService {
 			/*
 			 * 
 			 */
-			String userFullName = "dummy name";
+			String userFullName = loginrepo.getUserName(user.getUserId());
 			switch (user.getRole().getRoleId()) {
 			case 1: // doctor
 //			Doctor doctor=doctorRepo.getDoctorByUserId(user.getUserId());
