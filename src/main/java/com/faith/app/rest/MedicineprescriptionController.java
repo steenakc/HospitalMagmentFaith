@@ -1,6 +1,7 @@
 package com.faith.app.rest;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import com.faith.app.entity.MedicnePrescription;
 import com.faith.app.service.IMedicineprescriptionService;
 
@@ -38,6 +40,13 @@ public class MedicineprescriptionController {
 	public List<MedicnePrescription> getPrescription(@PathVariable int appointmentId) {
 		return medService.getmedprescribe(appointmentId);
 	}
+	
+	// Get prescription by id
+		@GetMapping("/pharmacy")
+		public List<MedicnePrescription> getPharmaPrescription() {
+			return medService.listByPharma();
+		}
+	
 
 	@PutMapping("/prescribe")
 	public void updateMedPrescription(@RequestBody MedicnePrescription medprescribe) {
@@ -48,4 +57,10 @@ public class MedicineprescriptionController {
 	public void deleteMedPrescribe(@PathVariable int id) {
 		medService.disableMedicineprescription(id);
 	}
+	
+	//deletePharmaStaus
+	@DeleteMapping("/pharma/{appointmentId}")
+	public void updatePharmaStatus(@PathVariable int appointmentId) {
+		medService.updatePharma(appointmentId);
+		}
 }

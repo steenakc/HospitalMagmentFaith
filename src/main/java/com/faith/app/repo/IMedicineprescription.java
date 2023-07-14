@@ -17,4 +17,11 @@ public interface IMedicineprescription extends CrudRepository<MedicnePrescriptio
 	
 	@Query("from MedicnePrescription where appointmentId=?1")
 	public List<MedicnePrescription> getmedicinePrescribe(int appointmentId);
+	
+	@Modifying
+    @Query("UPDATE MedicnePrescription c SET c.pharmaStatus = false WHERE c.appointmentId = :id")
+    public void disablepharmaStatus(@Param("id") int id);
+	
+	@Query("from MedicnePrescription where pharmaStatus=true")
+	public List<MedicnePrescription> displayByPharma();
 }
