@@ -1,5 +1,6 @@
 package com.faith.app.rest;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.faith.app.DTO.DoctorSlotAppointments;
+import com.faith.app.common.APIResponse;
 import com.faith.app.entity.Appointment;
 import com.faith.app.entity.Department;
 import com.faith.app.entity.Patient;
@@ -34,11 +36,12 @@ public class RecptionistController {
 		return recepService.savePatient(patient);
 
 	}
+
 	// add appointment
-		@PostMapping("/appointment")
-		public Appointment addAppointment(@RequestBody Appointment appointment) {
-			return recepService.saveAppointment(appointment);
-		}
+	@PostMapping("/appointment")
+	public Appointment addAppointment(@RequestBody Appointment appointment) {
+		return recepService.saveAppointment(appointment);
+	}
 
 	// list patients
 	@GetMapping("/list-patient")
@@ -48,8 +51,8 @@ public class RecptionistController {
 		return recepService.getPatients();
 
 	}
-	
-	//seacrh patient by Phone number or Patient name
+
+	// seacrh patient by Phone number or Patient name
 //	@GetMapping("/search-patient")
 //	public List<Patient> listPatientByPhOrName(@RequestParam String phNo, @RequestParam String patientName) {
 //	    return recepService.listPatientByPhOrName(phNo, patientName);
@@ -57,10 +60,8 @@ public class RecptionistController {
 
 	@GetMapping("/search-patient")
 	public List<Patient> searchPatientByNameOrPhone(@RequestParam(required = false) String searchTerm) {
-	    return recepService.searchPatientByNameOrPhone(searchTerm);
+		return recepService.searchPatientByNameOrPhone(searchTerm);
 	}
-
-	
 
 	// list by id
 //path param
@@ -68,15 +69,15 @@ public class RecptionistController {
 	public Patient getPatient(@PathVariable int id) {
 		return recepService.getPatient(id);
 	}
-	
-	//appointment list by id
-	
+
+	// appointment list by id
+
 	@GetMapping("/get-appointment/{id}")
 	public Appointment getAppointment(@PathVariable int id) {
 		return recepService.getAppointment(id);
 	}
-	//request-param
-	
+	// request-param
+
 //	@GetMapping("/get-patient")
 //	public Patient getPatiendsdst(@RequestParam("aaaa") int bbbb) {
 //		return recepService.getPatient(id);
@@ -91,34 +92,32 @@ public class RecptionistController {
 	// edit patientdetails
 
 	@PutMapping("/edit-patient")
-	public  Patient updatePatient(@RequestBody Patient patient) {
-		 return recepService.savePatient(patient);
+	public Patient updatePatient(@RequestBody Patient patient) {
+		return recepService.savePatient(patient);
 
 	}
 
 	// disable patient
 
 	@DeleteMapping("/diasble-patient/{id}")
-	public  boolean disablePatient(@PathVariable int id) {
-		 recepService.deletePatient(id);
+	public boolean disablePatient(@PathVariable int id) {
+		recepService.deletePatient(id);
 		return true;
 	}
 
-	
-	
-	//list aappointment
-	
+	// list aappointment
+
 	@GetMapping("/appointment")
-	public List<Appointment>getAppointmnets(){
+	public List<Appointment> getAppointmnets() {
 		return recepService.getAppointmnets();
 	}
-	
+
 //list departments
 	@GetMapping("/departments")
-	public List<Department>getDepartments(){
+	public List<Department> getDepartments() {
 		return recepService.getDepartments();
 	}
-	
+
 	// listing appointments in dashboard
 
 	@GetMapping("/dashboard-appointmnets-details")
@@ -126,6 +125,23 @@ public class RecptionistController {
 			@RequestParam("date") String date) {
 		return recepService.getDashboardDetails(departnemtnId, date);
 
+	}
+
+	/*
+	 * 
+	 */
+	@GetMapping("/generate-bill")
+	public APIResponse generateBill(@RequestParam("appointmentId") int appointmentId) {
+		return recepService.generateBill(appointmentId);
+	}
+	@GetMapping("/mark-bill-paid")
+	public APIResponse markBillPaid(@RequestParam("patientBillId") int patientBillId) {
+		return recepService.markBillPaid(patientBillId);
+	}
+	
+	@DeleteMapping("/cancel-appointment")
+	public APIResponse cancelAppointment(@RequestParam("appointmentId") int appointmentId) {
+		return recepService.cancelAppointment(appointmentId);
 	}
 
 }

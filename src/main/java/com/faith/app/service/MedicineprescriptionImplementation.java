@@ -45,6 +45,19 @@ public class MedicineprescriptionImplementation implements IMedicineprescription
 	public List<MedicnePrescription> getmedprescribe(int appointmentId) {
 		return (List<MedicnePrescription>)medprescriberepo.getmedicinePrescribe(appointmentId);
 	}
+
+
+	@Transactional
+	public void updatePharma(int appointmentId) {
+		medprescriberepo.disablepharmaStatus(appointmentId);
+		
+	}
+
+
+	
+	public List<MedicnePrescription> listByPharma() {
+		return (List<MedicnePrescription>)medprescriberepo.displayByPharma();
+	}
 	
 	
 	

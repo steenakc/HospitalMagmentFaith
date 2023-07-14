@@ -41,8 +41,7 @@ public class MedicinestockController {
 	
 	@GetMapping("/stock/{medicineStockId}")
 	public MedicineStock listbyMedicinestock(@PathVariable int medicineStockId){
-		System.out.println("ljkhgf  ");
-		System.out.println("hhgghghg "+medicineStockId);
+		
 		return medstockservice.medicineStockById(medicineStockId);
 	}
 	
