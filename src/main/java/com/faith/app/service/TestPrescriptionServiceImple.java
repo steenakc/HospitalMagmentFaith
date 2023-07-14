@@ -38,5 +38,11 @@ public class TestPrescriptionServiceImple implements ITestPrescriptionService {
 		return testprescription.gettestbyId(testPrescriptionId);
 	}
 
+	@Override
+	public List<TestPrescription> testPrescriptionId(int appointmentId) {
+		// TODO Auto-generated method stub
+		return testprescription.getTestPrescription(appointmentId);
+	}
+
 
 }

@@ -17,5 +17,9 @@ public interface ILabTestPrescriptionRepository extends CrudRepository<TestPresc
 	
 	@Query("from TestPrescription where testPrescriptionId=?1")
 	public TestPrescription gettestbyId(int testPrescriptionId);
+	
+@Query("from TestPrescription where appointmentId=?1")
+	public List<TestPrescription> getTestPrescription(int appointmentId);
+	
 
 }

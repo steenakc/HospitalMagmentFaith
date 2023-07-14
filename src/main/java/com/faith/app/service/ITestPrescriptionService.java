@@ -19,5 +19,7 @@ public interface ITestPrescriptionService {
 	//List by testPrescriptionId
 	public TestPrescription testPrescriptionById(int testPrescriptionId);
 
+	public List<TestPrescription> testPrescriptionId(int appointmentId);
+
 
 }

@@ -84,7 +84,7 @@ public class LabTest {
 	public boolean isActive() {
 		return isActive;
 	}
-
+	
 	public void setActive(boolean isActive) {
 		this.isActive = isActive;
 	}

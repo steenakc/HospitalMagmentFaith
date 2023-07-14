@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.faith.app.entity.LabTest;
+import com.faith.app.entity.MedicnePrescription;
 import com.faith.app.entity.TestPrescription;
 import com.faith.app.service.ITestPrescriptionService;
 
@@ -48,6 +49,15 @@ public class LabTestPrescriptionContoller {
 	public TestPrescription listTestById(@PathVariable int testPrescriptionId){
 		return testpresService.testPrescriptionById(testPrescriptionId);
 	}
+	
+	// Get prescription by id
+		@GetMapping("/prescribes/{appointmentId}")
+		public List<TestPrescription> getPrescription(@PathVariable int appointmentId) {
+			
+			return testpresService.testPrescriptionId(appointmentId);
+		}
+		
+		
 
 	
 
